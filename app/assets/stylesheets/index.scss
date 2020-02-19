@@ -1,150 +1,246 @@
-.header { 
-  display: flex;
-  height: 70px;
-  display: flex;
-  height: 70px;
-  z-index: 10;
-  background-color: #CCCCCC;
-  z-index: 2;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-  .header__logo__box {
-    width: 100px;
+body {
+  a:visited { color: #575652; text-decoration:none }
+  .header { 
     height: 70px;
-    .header__logo {
-      text-align: center;
-      margin: 12px;
-    }
-  }
-  
-  .link__box {
-    height: 70px;
-    width: 800px;
-    text-align: center;
-    line-height: 70px;
-    margin: auto;
-    #nav ul li{ 	
-      display: inline;
-   } 
+    display: flex;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    .header__logo__box {
+      width: 100px;
+      height: 70px;
+      .header__logo {
+        text-align: center;
+        margin: 12px;
       }
     }
-  nav.globalMenuSp {
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    background: #fff;
-    color: #000;
-    text-align: center;
-    transform: translateY(-100%);
-    transition: all 0.3s;
-    width: 100%;
-
-    ul {
-      background: #ccc;
-      margin: 0 auto;
-      padding: 0;
-      width: 100%;
-      padding: 100px 0 0 !important;
+    
+    .link__box {
+      height: 40px;
+      width: 800px;
+      text-align: center;
+      line-height: 40px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
       font-weight: bold;
+      a {
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+      }
+      a::after {
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #333;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+      }
+      a:hover::after {
+        bottom: -4px;
+        opacity: 1;
+        visibility: visible;
+      }
+      #nav ul li{ 	
+        display: inline;
+        
+        
+    } 
+        }
+      }
+    nav.globalMenuSp {
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      background: #fff;
+      color: #000;
+      text-align: center;
+      transform: translateY(-100%);
+      transition: all 0.3s;
+      width: 100%;
+      opacity: 0.7;
 
-      li {
-        font-size: 1.1em;
-        list-style-type: none;
+      ul {
+        background-color: transparent;
+        margin: 0 auto;
         padding: 0;
         width: 100%;
-        border-bottom: 1px dotted #333;
+        padding: 100px 0 0 !important;
+        font-weight: bold;
 
-        &:last-child {
-          padding-bottom: 0;
-          border-bottom: none;
-        }
+        li {
+          font-size: 1.1em;
+          list-style-type: none;
+          padding: 0;
+          width: 100%;
+          border-bottom: 1px dotted #333;
 
-        a {
-          display: block;
-          color: #000;
-          padding: 1em 0;
+          &:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+          }
+
+          a {
+            display: block;
+            color: #000;
+            padding: 1em 0;
+          }
         }
+      }
+
+      &.active {
+        transform: translateY(0%);
       }
     }
 
-    &.active {
-      transform: translateY(0%);
-    }
-  }
+  /* 最後はラインを描かない */
 
-/* 最後はラインを描かない */
+  /* このクラスを、jQueryで付与・削除する */
 
-/* このクラスを、jQueryで付与・削除する */
-
-.navToggle {
-  display: block;
-  position: fixed;
-
-  /* bodyに対しての絶対位置指定 */
-  right: 20px;
-  top: 18px;
-  width: 42px;
-  height: 51px;
-  cursor: pointer;
-  z-index: 3;
-  background: #666;
-  text-align: center;
-
-  span {
+  .navToggle {
     display: block;
-    position: absolute;
+    position: fixed;
 
-    /* .navToggleに対して */
-    width: 30px;
-    border-bottom: solid 3px #eee;
-    -webkit-transition: .35s ease-in-out;
-    -moz-transition: .35s ease-in-out;
-    transition: .35s ease-in-out;
-    left: 6px;
+    /* bodyに対しての絶対位置指定 */
+    right: 20px;
+    top: 18px;
+    width: 42px;
+    height: 51px;
+    cursor: pointer;
+    z-index: 3;
+    background: #666;
+    text-align: center;
 
-    &:nth-child(1) {
-      top: 9px;
-    }
+    span {
+      display: block;
+      position: absolute;
 
-    &:nth-child(2) {
-      top: 18px;
-    }
-
-    &:nth-child(3) {
-      top: 27px;
-    }
-
-    &:nth-child(4) {
-      border: none;
-      color: #eee;
-      font-size: 9px;
-      font-weight: bold;
-      top: 34px;
-    }
-  }
-
-  &.active span {
-    &:nth-child(1) {
-      top: 18px;
+      /* .navToggleに対して */
+      width: 30px;
+      border-bottom: solid 3px #eee;
+      -webkit-transition: .35s ease-in-out;
+      -moz-transition: .35s ease-in-out;
+      transition: .35s ease-in-out;
       left: 6px;
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      transform: rotate(-45deg);
+
+      &:nth-child(1) {
+        top: 9px;
+      }
+
+      &:nth-child(2) {
+        top: 18px;
+      }
+
+      &:nth-child(3) {
+        top: 27px;
+      }
+
+      &:nth-child(4) {
+        border: none;
+        color: #eee;
+        font-size: 9px;
+        font-weight: bold;
+        top: 34px;
+      }
     }
 
-    &:nth-child(2), &:nth-child(3) {
-      top: 18px;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      transform: rotate(45deg);
+    &.active span {
+      &:nth-child(1) {
+        top: 18px;
+        left: 6px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(2), &:nth-child(3) {
+        top: 18px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
     }
   }
+
+  /* 最初のspanをマイナス45度に */
+
+  /* 2番目と3番目のspanを45度に */
+  // .contents {
+  // background-image: url("gym1.png");
+  // height: 700px;
+  // width: 700px;
+  // margin: 0 auto;
+  // margin: 200px,;
+  // background-size: cover;
+  // }
+  .contents {
+    .contents__box__top {
+      width: 800px;
+      height: 400px;
+      margin: 0 auto;
+      padding: 100px;
+      .fadeSlider {
+        position: fixed;
+        z-index: -1;
+        // top: 0;
+        // left: 0;
+        width: 60%;
+        height: 60%;
+      
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: contain;
+      
+          &.fadeSlider_01 {
+            background-image: url(gym1.png);
+            animation: fadeSlideImg01 15s ease-out infinite;
+            animation-delay: 3s;
+          }
+          &.fadeSlider_02 {
+            opacity: 0;
+            background-image: url(gym2.png);
+            animation: fadeSlideImg02 15s ease-out infinite;
+            animation-delay: 3s;
+          }
+          &.fadeSlider_03 {
+            opacity: 0;
+            background-image: url(gym3.png);
+            animation: fadeSlideImg03 15s ease-out infinite;
+            animation-delay: 3s;
+          }
+        }
+      }
+      
+      @keyframes fadeSlideImg01 {
+          0% { opacity: 1; }
+          33% { opacity: 0; }
+          66% { opacity: 0; }
+          100% { opacity: 1; }
+      }
+      @keyframes fadeSlideImg02 {
+          0% { opacity: 0; }
+          33% { opacity: 1; }
+          66% { opacity: 0; }
+          100% { opacity: 0; }
+      }
+      @keyframes fadeSlideImg03 {
+          0% { opacity: 0; }
+          33% { opacity: 0; }
+          66% { opacity: 1; }
+          100% { opacity: 0; }
+    }
+   }
+ }
 }
 
-/* 最初のspanをマイナス45度に */
-
-/* 2番目と3番目のspanを45度に */
-
-
-
-  
+    
