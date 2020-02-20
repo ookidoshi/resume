@@ -50,10 +50,10 @@ body {
         
     } 
         }
-      }
+  
     nav.globalMenuSp {
       position: fixed;
-      z-index: 2;
+      z-index: 6;
       top: 0;
       left: 0;
       background: #fff;
@@ -62,7 +62,7 @@ body {
       transform: translateY(-100%);
       transition: all 0.3s;
       width: 100%;
-      opacity: 0.7;
+      opacity: 0.8;
 
       ul {
         background-color: transparent;
@@ -91,156 +91,202 @@ body {
           }
         }
       }
-
+    
       &.active {
         transform: translateY(0%);
       }
     }
-
+    .navToggle {
+      display: block;
+      // position: fixed;
+      position: absolute;
+  
+      /* bodyに対しての絶対位置指定 */
+      right: 20px;
+      top: 18px;
+      width: 42px;
+      height: 51px;
+      cursor: pointer;
+      z-index: 6;
+      background: #666;
+      text-align: center;
+  
+      span {
+        display: block;
+        position: absolute;
+  
+        /* .navToggleに対して */
+        width: 30px;
+        border-bottom: solid 3px #eee;
+        -webkit-transition: .35s ease-in-out;
+        -moz-transition: .35s ease-in-out;
+        transition: .35s ease-in-out;
+        left: 6px;
+  
+        &:nth-child(1) {
+          top: 9px;
+        }
+  
+        &:nth-child(2) {
+          top: 18px;
+        }
+  
+        &:nth-child(3) {
+          top: 27px;
+        }
+  
+        &:nth-child(4) {
+          border: none;
+          color: #eee;
+          font-size: 9px;
+          font-weight: bold;
+          top: 34px;
+        }
+      }
+  
+      &.active span {
+        &:nth-child(1) {
+          top: 18px;
+          left: 6px;
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+  
+        &:nth-child(2), &:nth-child(3) {
+          top: 18px;
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+    }
+  
+    /* 最初のspanをマイナス45度に */
+  
+    /* 2番目と3番目のspanを45度に */
+    // .contents {
+    // background-image: url("gym1.png");
+    // height: 700px;
+    // width: 700px;
+    // margin: 0 auto;
+    // margin: 200px,;
+    // background-size: cover;
+    // }
+  }
   /* 最後はラインを描かない */
 
   /* このクラスを、jQueryで付与・削除する */
 
-  .navToggle {
-    display: block;
-    position: fixed;
+  
+  
 
-    /* bodyに対しての絶対位置指定 */
-    right: 20px;
-    top: 18px;
-    width: 42px;
-    height: 51px;
-    cursor: pointer;
-    z-index: 3;
-    background: #666;
-    text-align: center;
-
-    span {
-      display: block;
-      position: absolute;
-
-      /* .navToggleに対して */
-      width: 30px;
-      border-bottom: solid 3px #eee;
-      -webkit-transition: .35s ease-in-out;
-      -moz-transition: .35s ease-in-out;
-      transition: .35s ease-in-out;
-      left: 6px;
-
-      &:nth-child(1) {
-        top: 9px;
-      }
-
-      &:nth-child(2) {
-        top: 18px;
-      }
-
-      &:nth-child(3) {
-        top: 27px;
-      }
-
-      &:nth-child(4) {
-        border: none;
-        color: #eee;
-        font-size: 9px;
-        font-weight: bold;
-        top: 34px;
-      }
-    }
-
-    &.active span {
-      &:nth-child(1) {
-        top: 18px;
-        left: 6px;
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-      }
-
-      &:nth-child(2), &:nth-child(3) {
-        top: 18px;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-    }
-  }
-
-  /* 最初のspanをマイナス45度に */
-
-  /* 2番目と3番目のspanを45度に */
-  // .contents {
-  // background-image: url("gym1.png");
-  // height: 700px;
-  // width: 700px;
-  // margin: 0 auto;
-  // margin: 200px,;
-  // background-size: cover;
-  // }
-  .contents {
-    .contents__box__top {
-      width: 800px;
-      height: 400px;
+  .contents__box__top {
+    width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+    padding: 100px;
+    .slider{
+      // width: 70vw;
+      height: calc(70vw * 0.8);
       margin: 0 auto;
-      padding: 100px;
-      .fadeSlider {
-        position: fixed;
-        z-index: -1;
-        // top: 0;
-        // left: 0;
-        width: 60%;
-        height: 60%;
-      
-        span {
+      overflow: hidden;
+      position: relative;
+  }
+        
+      .slider__content{
+          min-width: 100%;
           position: absolute;
           top: 0;
           left: 0;
-          width: 100%;
-          height: 100%;
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-size: contain;
+          transform: translateX(100%);
+      }
+        
+      .slider__content:nth-child(1){
+          animation: sliderAnime 18s ease-in-out infinite;
+          z-index: 6;
+      }
+        
+      .slider__content:nth-child(2){
+          animation: sliderAnime2 18s ease-in-out 3s infinite;
+          z-index: -1;
+      }
+        
+      .slider__content:nth-child(3){
+          animation: sliderAnime2 18s ease-in-out 9s infinite;
+          z-index: -1;
+      }
+        
+      @keyframes sliderAnime{
+          0%{
+              z-index: 5;
+              transform: translateX(0);
+          }
+          16.6%{
+              transform: translateX(0);
+          }
+          33.3%{
+              transform: translateX(-100%);
+          }
+          50%{
+              z-index: -1;
+              transform: translateX(-100%);
+          }
+          66.6%{
+              transform: translateX(100%);
+          }
+          83.2%{
+              z-index: 5;
+              transform: translateX(100%);
+          }
+          100%{
+              z-index: 5;
+              transform: translateX(0);
+          }
+      }
       
-          &.fadeSlider_01 {
-            background-image: url(gym1.png);
-            animation: fadeSlideImg01 15s ease-out infinite;
-            animation-delay: 3s;
-          }
-          &.fadeSlider_02 {
-            opacity: 0;
-            background-image: url(gym2.png);
-            animation: fadeSlideImg02 15s ease-out infinite;
-            animation-delay: 3s;
-          }
-          &.fadeSlider_03 {
-            opacity: 0;
-            background-image: url(gym3.png);
-            animation: fadeSlideImg03 15s ease-out infinite;
-            animation-delay: 3s;
-          }
+    @keyframes sliderAnime2{
+        0%{
+            z-index: 5;
+            transform: translateX(100%);
         }
-      }
-      
-      @keyframes fadeSlideImg01 {
-          0% { opacity: 1; }
-          33% { opacity: 0; }
-          66% { opacity: 0; }
-          100% { opacity: 1; }
-      }
-      @keyframes fadeSlideImg02 {
-          0% { opacity: 0; }
-          33% { opacity: 1; }
-          66% { opacity: 0; }
-          100% { opacity: 0; }
-      }
-      @keyframes fadeSlideImg03 {
-          0% { opacity: 0; }
-          33% { opacity: 0; }
-          66% { opacity: 1; }
-          100% { opacity: 0; }
+        16.6%{
+            transform: translateX(0);
+        }
+        33.3%{
+            transform: translateX(0);
+        }
+        50%{
+            transform: translateX(-100%);
+        }
+        66.6%{
+            z-index: -1;
+            transform: translateX(-100%);
+        }
+        83.2%{
+            transform: translateX(100%);
+        }
+        100%{
+            z-index: 5;
+            transform: translateX(100%);
+        }
     }
-   }
- }
+      
+    .slider__img{
+        max-width: 100%;
+        min-width: 100%;
+    }
+    }
+  .footer {
+    background: #666666;
+    color: #ffffff;
+    height: 300px;
+    display: flex;
+    // flex-flow: column;
+    // min-height: 35vh;
+  }
 }
+ 
+
 
     
