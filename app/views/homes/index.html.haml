@@ -10,8 +10,8 @@
       %a{:href => "#"} 入会案内
       %a{:href => "#"} よくあるご質問
       %a{:href => "#"} スケジュール
+      %a{:href => "#"} Toutube
       %a{:href => "#"} アクセス
-      
     %nav.globalMenuSp
       %ul
         %li
@@ -22,6 +22,8 @@
           %a{:href => "#"} よくあるご質問
         %li
           %a{:href => "#"} スケジュール
+        %li
+          %a{:href => "#"} Youtube
         %li
           %a{:href => "#"} アクセス
     .navToggle
@@ -42,14 +44,27 @@
         %img.slider__img{:alt => "slider_image1", :src => "assets/slider_image3.png"}/
 
   .footer 
-    %h1フッター
-  
+    .contents__box
+      .contents__message
+        = link_to "https://www.facebook.com/%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%94%E3%82%AA%E3%83%B3%E3%82%B8%E3%83%A0-IKEDA-356524441173763/", class: "icon" do
+          = icon('fa', 'facebook-square', class:"icon")
+          -# Facebook
+        = link_to "https://twitter.com/scorpiongym_ura", class: "icon" do
+          = icon('fa', 'twitter', class:"icon")
+          -# Twitter
+        = link_to "https://z-p3.www.instagram.com/japanesebjj/?hl=en", class: "icon" do
+          = icon('fa', 'instagram', class:"icon")
+          -# Instagram
+        = link_to "https://www.youtube.com/channel/UCyyTvF-Lv-381-sRtIE23tw", class: "icon" do
+          = icon('fa', 'youtube', class:"icon")
+          -# Yotube
+      
+    .privacy    
+      = link_to "プライバシーポリシー", class: "privacy"
 
 
-
-
-
-
+    .copyright
+      %h6 Copyright © 2011 SCORPION-GYM. All rights reserved.
 
 
 

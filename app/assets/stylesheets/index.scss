@@ -1,5 +1,5 @@
 body {
-  a:visited { color: #575652; text-decoration:none }
+  a:visited { color: #333; text-decoration:none }
   .header { 
     height: 70px;
     display: flex;
@@ -22,6 +22,7 @@ body {
       display: flex;
       justify-content: space-between;
       font-weight: bold;
+      font-size: 12px;
       a {
         text-decoration: none;
         position: relative;
@@ -86,7 +87,7 @@ body {
 
           a {
             display: block;
-            color: #000;
+            color: #333;
             padding: 1em 0;
           }
         }
@@ -108,7 +109,7 @@ body {
       height: 51px;
       cursor: pointer;
       z-index: 6;
-      background: #666;
+      background: #333;
       text-align: center;
   
       span {
@@ -182,13 +183,14 @@ body {
   
 
   .contents__box__top {
-    width: 1000px;
-    height: 700px;
+    // width: 1000px;
+    height: 650px;
     margin: 0 auto;
     padding: 100px;
+    background-color: #f0f0f0;
     .slider{
-      // width: 70vw;
-      height: calc(70vw * 0.8);
+      width: 60vw;
+      height: calc(60vw * 0.8);
       margin: 0 auto;
       overflow: hidden;
       position: relative;
@@ -278,15 +280,44 @@ body {
     }
     }
   .footer {
-    background: #666666;
-    color: #ffffff;
+    background: #ffffff;
+    color: #333;
     height: 300px;
-    display: flex;
+    
     // flex-flow: column;
     // min-height: 35vh;
+    .contents__box {
+      // width:900px;
+      height: 100px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 50px;
+      &__message{
+        padding: 30px;
+        font-size:15px;
+        display: flex;
+        
+        margin: auto;
+      }
+      &__btn{
+        
+      }
+    .privacy {
+      text-align: center;
+    }
+    }
+    h6 {
+      display: block;
+      color:#575652 ;
+      text-align: center;
+    }
+    
   }
 }
- 
-
-
-    
+ .icon {
+  
+  font-size: 30px;
+  text-decoration: none;
+  margin: 45px;
+  
+ }
