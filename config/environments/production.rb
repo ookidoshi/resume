@@ -63,7 +63,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "resume_#{Rails.env}"
 
-  # config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = false
 
 
   # config.assets.initialize_on_precompile = false
