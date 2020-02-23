@@ -198,7 +198,9 @@ body {
       position: relative;
       
   }
-        
+      .h1 {
+        z-index: 6;
+      } 
       .slider__content{
           min-width: 100%;
           position: absolute;
