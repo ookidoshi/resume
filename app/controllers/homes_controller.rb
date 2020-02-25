@@ -1,7 +1,9 @@
 class HomesController < ApplicationController
   def index
   end
-
-  def join
+  
+  def new
   end
+
+
 end

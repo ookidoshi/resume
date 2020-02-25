@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
  root 'homes#index'
- resources :homes, only: :join
+
+ resources :homes, only: [:index, :new]
 end
 
-end
