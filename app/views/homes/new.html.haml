@@ -1,32 +1,111 @@
-.boby
-  
-
-  .contents__box__top
-  
+.body
 
 
-
-
-
-
-    
-  .footer 
-    .contents__box
-      .contents__message
-        = link_to "https://www.facebook.com/%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%94%E3%82%AA%E3%83%B3%E3%82%B8%E3%83%A0-IKEDA-356524441173763/", class: "icon" do
-          = icon('fa', 'facebook-square', class:"icon")
-          -# Facebook
-        = link_to "https://twitter.com/scorpiongym_ura", class: "icon" do
-          = icon('fa', 'twitter', class:"icon")
-          -# Twitter
-        = link_to "https://z-p3.www.instagram.com/japanesebjj/?hl=en", class: "icon" do
-          = icon('fa', 'instagram', class:"icon")
-          -# Instagram
-        = link_to "https://www.youtube.com/channel/UCyyTvF-Lv-381-sRtIE23tw", class: "icon" do
-          = icon('fa', 'youtube', class:"icon")
-          -# Yotube
-
+.contents__box__top
+  .center__box
+    %h5※会費は参加するクラス及び回数に関係なく追加はありません。
+    %h5※月の途中で入会の場合、会費は割引きいたします。
+  .wrap   
+    %table
+      %thead
+        %tr
+          %th{:scope => "col"} 基本情報
+          %th{:scope => "col"} 入会金
+          %th{:scope => "col"} 月会費
+          %th{:scope => "col"} スポーツ保険+事務手数料
+          %th{:scope => "col"} 
+          %th.red_bk{:scope => "col"} 入会金（月会費2ヶ月分）+スポーツ保険代
+          %th{:scope => "col"} 
+      %tbody
+       
+        %tr
+          %th 一般男性
+          %td ¥10,000
+          %td ¥8,800
+          %td ¥2,150	
+          %td ➡️
+          %td.price
+            ¥29,750
+          %td
+            %a.btn{:href => "#"} お申し込み
+          
+            
+        %tr
+        %tr
+          %th 学生
+          %td ¥10,000
+          %td ¥6,600
+          %td ¥2,150	
+          %td ➡️
+          %td.price
+            ¥25,350
+          %td
+            %a.btn{:href => "#"} お申し込み
+        %tr
+          %th 女性
+          %td ¥10,000
+          %td ¥6,600
+          %td ¥2,150	
+          %td ➡︎
+          %td.price
+            ¥25,350
+          %td
+            %a.btn{:href => "#"} お申し込み
+    .info__text     
+      %h5※初回のみ月会費を2ヶ月分先払いとなります。3ヶ月目からは口座引き落としとなります。
+      %h5※スポーツ保険　1850円/年間　+　事務手数料300円（スポーツ保険はいつ加入しても3月末に更新です）。
+      %h5※会費には消費税を含みます。
         
-      = link_to "プライバシーポリシー", class: "privacy"
-    .copyright
-      %h6 Copyright © 2011 SCORPION-GYM. All rights reserved.
+-# %table{:border => "1"}
+-# %tr
+-# %th
+-# %th 入会金
+-# %th 月会費
+-# %th スポーツ保険+事務手数料
+-# %th
+-# %th入会金（月会費2ヶ月分）+スポーツ保険代
+-# %tr
+-# %th 一般男性
+-# %td ¥10,000
+-# %td ¥8,800
+-# %td ¥2,150
+-# %td…
+-# %td ¥29,750
+-# %tr
+-# %th 学生
+-# %td ¥10,000
+-# %td ¥6,600
+-# %td ¥2,150
+-# %td…
+-# %td¥25,350
+-# %tr
+-# %th 女性
+-# %td ¥10,000
+-# %td ¥6,600
+-# %td ¥2,150
+-# %td…
+-# %td¥25,350
+
+
+
+.footer
+  .contents__box
+    .contents__message
+      = link_to "https://www.facebook.com/%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%94%E3%82%AA%E3%83%B3%E3%82%B8%E3%83%A0-IKEDA-356524441173763/", class: "icon" do
+        = icon('fa', 'facebook-square', class:"icon")
+        -# Facebook
+      = link_to "https://twitter.com/scorpiongym_ura", class: "icon" do
+        = icon('fa', 'twitter', class:"icon")
+        -# Twitter
+      = link_to "https://z-p3.www.instagram.com/japanesebjj/?hl=en", class: "icon" do
+        = icon('fa', 'instagram', class:"icon")
+        -# Instagram
+      = link_to "https://www.youtube.com/channel/UCyyTvF-Lv-381-sRtIE23tw", class: "icon" do
+        = icon('fa', 'youtube', class:"icon")
+        -# Yotube
+
+      
+    = link_to "プライバシーポリシー", class: "privacy"
+  .copyright
+    %h6 Copyright © 2011 SCORPION-GYM. All rights reserved.
+
