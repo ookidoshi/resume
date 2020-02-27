@@ -6,7 +6,7 @@ class HomesController < ApplicationController
   def new
   end
 
-  def show
+  def faq
   end
 
 end
