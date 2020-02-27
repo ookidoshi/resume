@@ -180,7 +180,8 @@ body {
   /* 最後はラインを描かない */
 
   /* このクラスを、jQueryで付与・削除する */
-
+  .contents__box__top {
+    background-color: #f0f0f0;
   .center__box {
     width: 864px;
     line-height:1;
@@ -302,7 +303,7 @@ body {
           color: #fff;
         }
     }
-    
+  }
           
     .footer {
       background: #ffffff;
@@ -323,8 +324,7 @@ body {
           display: flex;
           
           margin: auto;
-        }
-       
+        }     
       
       }
       h6 {
