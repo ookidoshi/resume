@@ -1,5 +1,5 @@
 body {
-  a:visited { color: #333; text-decoration:none }
+  a:visited { color: #fff; text-decoration:none }
   .header { 
     height: 70px;
     display: flex;
@@ -181,17 +181,16 @@ body {
 
   /* このクラスを、jQueryで付与・削除する */
 
-  
-  
-
-  .contents__box__top {
-   
-    .center__box {
-      width: 864px;
-      line-height:1;
-      margin: 0 auto;
-      
+  .center__box {
+    width: 864px;
+    line-height:1;
+    margin: 0 auto;
+    h3 {
+      background-color: #333;
+      color: #fff;
+      padding: .35em;
     }
+  }
     table {
       border-collapse: collapse;
       margin: 0 auto;
@@ -210,12 +209,12 @@ body {
       }
     
       th {
-        padding: 2em;
+        padding: 1em;
         border-right: 2px solid #fff;
       }
     
       td {
-        padding: 2em .5em;
+        padding: 1em .5em;
         border-right: 2px solid #eee;
         text-align: center;
       }
@@ -296,6 +295,12 @@ body {
         h5 {
           text-decoration: none;
         }
+        .next__btn {
+          width: 200px;
+          margin: 0 auto;
+          text-align: center;
+          color: #fff;
+        }
     }
     
           
@@ -319,9 +324,7 @@ body {
           
           margin: auto;
         }
-        &__btn{
-          
-        }
+       
       
       }
       h6 {
@@ -335,7 +338,7 @@ body {
       }
       
     }
-  }
+  
  .icon {
   
   font-size: 30px;
