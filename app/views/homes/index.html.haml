@@ -1,5 +1,40 @@
 .boby
-  
+
+  .header
+    .header__logo__box
+      .header__logo
+        = link_to image_tag('scorpion.png', :size =>'45x45'), '/'
+
+    .link__box
+      #nav
+      %a{:href => "#"} ホーム
+      %a{:href => ""} 入会案内
+      %a{:href => "#"} よくあるご質問
+      %a{:href => "#"} スケジュール
+      %a{:href => "https://www.youtube.com/channel/UCyyTvF-Lv-381-sRtIE23tw"} Youtube
+      %a{:href => "#"} 連絡先
+      %a{:href => "#"} アクセス
+    %nav.globalMenuSp
+      %ul
+        %li
+          %a{:href => "#"} ホーム
+        %li
+          %a{:href => "#"} 入会案内
+        %li
+          %a{:href => "#"} よくあるご質問
+        %li
+          %a{:href => "#"} スケジュール
+        %li
+          %a{:href => "#"} Youtube
+        %li
+          %a{:href => "#"} アクセス
+    .navToggle
+      %span
+      %span
+      %span
+      %span menu
+
+
     
 
   .contents__box__top
@@ -31,4 +66,5 @@
       = link_to "プライバシーポリシー", class: "privacy"
     .copyright
       %h6 Copyright © 2011 SCORPION-GYM. All rights reserved.
+
 
