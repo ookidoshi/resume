@@ -182,11 +182,14 @@ body {
   /* このクラスを、jQueryで付与・削除する */
   .contents__box__top {
     background-color: #f0f0f0;
+    border: 1px solid #c0c0c0;
+    padding: 30px;
   .center__box {
     width: 864px;
     line-height:1;
     margin: 0 auto;
     padding: 20px;
+    
     h3 {
       background-color: #333;
       color: #fff;
