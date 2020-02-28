@@ -11,5 +11,8 @@ class HomesController < ApplicationController
 
   def schedule
   end
-  
+
+  def map
+  end
+
 end
