@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :homes do
       collection do
         get 'faq'
+        get 'schedule'
     end
   end
 end

@@ -9,4 +9,7 @@ class HomesController < ApplicationController
   def faq
   end
 
+  def schedule
+  end
+  
 end
