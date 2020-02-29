@@ -1,21 +1,64 @@
 !!!
-%html{:lang => "ja"}
+%html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "UTF-8"}/
-    %title Sample_GoogleMap
-    %script{:src => "http://maps.google.com/maps/api/js?key={AIzaSyCzvzjkUZSOCoqnopSfu6DXh6VrAPg8q5w}&language=ja"}
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     :css
-      html { height: 100% }
-      body { height: 100% }
-      #map { height: 100%; width: 100%}
-  %body
-    #map
+      html { height: 90% }
+      body { height: 95%; margin: 0; padding: 0 }
+      #map_canvas { height: 90% }
+    %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyCzvzjkUZSOCoqnopSfu6DXh6VrAPg8q5w"}
+      :cdata
+  / ページが読み込まれたらinitialize()関数を実行
+  %body{:onload => "initialize()"}
+    / 地図を表示させる要素。widthとheightを必ず指定する。
+    #map_canvas{:style => "width:100%; height:100%"}
+    
+    緯度：
+    %span#ido 34.802974
+    %br/
+    経度：
+    %span#keido 135.429446
+    / initialize()関数を定義
     :javascript
-      var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
-      var Options = {
-       zoom: 15,      //地図の縮尺値
-       center: MyLatLng,    //地図の中心座標
-       mapTypeId: 'roadmap'   //地図の種類
-      };
-      var map = new google.maps.Map(document.getElementById('map'), Options);
+      var map;
+      function initialize() {
+        // 地図を表示する際のオプションを設定
+        var mapOptions = {
+          center: new google.maps.LatLng(34.802974, 135.429446),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+ 
+        // Mapオブジェクトに地図表示要素情報とオプション情報を渡し、インスタンス生成
+        map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+      }
+       
+      function search(){
+         var place = document.getElementById('place').value;
+         var geocoder = new google.maps.Geocoder();
+         // ジオコーディング　検索実行
+         geocoder.geocode({"address" : place}, function(results, status) {
+         if (status == google.maps.GeocoderStatus.OK) {
+               
+              var lat = results[0].geometry.location.lat();//緯度を取得
+              var lng = results[0].geometry.location.lng();//経度を取得
+              var ido = document.getElementById('ido')
+              ido.innerHTML = lat;
+              var keido = document.getElementById('keido')
+              keido.innerHTML = lng;
+              var mark = {
+                  lat: lat, // 緯度
+                  lng: lng // 経度
+              };
+              marker = new google.maps.Marker({ // マーカーの追加
+              position: mark, // マーカーを立てる位置を指定
+              map: map // マーカーを立てる地図を指定
+              });
+               
+              map.setCenter(results[0].geometry.location); // 地図の中心を移動
+              cnt =0;
+         }
+         });
+         //}
+      }
