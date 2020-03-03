@@ -1,329 +1,398 @@
-.body {
-  a:link, a:visited, a:hover, a:active {
-    color:#333;
-  }
-  a:visited { color: #333; text-decoration:none }
-  .header { 
-    height: 70px;
-    display: flex;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-    .header__logo__box {
-      width: 100px;
-      height: 70px;
-      .header__logo {
-        text-align: center;
-        margin: 12px;
-      }
-    }
+  // .body {
+  //   a:link, a:visited, a:hover, a:active {
+  //     color:#333;
+  //   }
+  //   a:visited { color: #333; text-decoration:none }
+  //   .header { 
+  //     height: 70px;
+  //     display: flex;
+  //     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  //     .header__logo__box {
+  //       width: 100px;
+  //       height: 70px;
+  //       .header__logo {
+  //         text-align: center;
+  //         margin: 12px;
+  //       }
+  //     }
+      
+  //     .link__box {
+  //       height: 40px;
+  //       width: 800px;
+  //       text-align: center;
+  //       line-height: 40px;
+  //       margin: auto;
+  //       display: flex;
+  //       justify-content: space-between;
+  //       padding-right: 180px;
+  //       // font-weight: bold;
+  //       font-size: 12px;
+  //       a {
+  //         text-decoration: none;
+  //         position: relative;
+  //         display: inline-block;
+  //         color: #333;
+  //       }
+  //       a::after {
+  //         position: absolute;
+  //         bottom: 2px;
+  //         left: 0;
+  //         content: '';
+  //         width: 100%;
+  //         height: 2px;
+  //         background: #333;
+  //         opacity: 0;
+  //         visibility: hidden;
+  //         transition: .3s;
+  //       }
+  //       a:hover::after {
+  //         bottom: -4px;
+  //         opacity: 1;
+  //         visibility: visible;
+  //       }
+  //       #nav ul li{ 	
+  //         display: inline;
+          
+          
+  //     } 
+  //         }
     
-    .link__box {
-      height: 40px;
-      width: 800px;
-      text-align: center;
-      line-height: 40px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      padding-right: 180px;
-      // font-weight: bold;
-      font-size: 12px;
-      a {
-        text-decoration: none;
-        position: relative;
-        display: inline-block;
-        color: #333;
-      }
-      a::after {
-        position: absolute;
-        bottom: 2px;
-        left: 0;
-        content: '';
-        width: 100%;
-        height: 2px;
-        background: #333;
-        opacity: 0;
-        visibility: hidden;
-        transition: .3s;
-      }
-      a:hover::after {
-        bottom: -4px;
-        opacity: 1;
-        visibility: visible;
-      }
-      #nav ul li{ 	
-        display: inline;
+  //     nav.globalMenuSp {
+  //       position: fixed;
+  //       z-index: 6;
+  //       top: 0;
+  //       left: 0;
+  //       background: #fff;
+  //       color: #000;
+  //       text-align: center;
+  //       transform: translateY(-100%);
+  //       transition: all 0.3s;
+  //       width: 100%;
+  //       opacity: 0.8;
+
+  //       ul {
+  //         background-color: transparent;
+  //         margin: 0 auto;
+  //         padding: 0;
+  //         width: 100%;
+  //         padding: 100px 0 0 !important;
+  //         font-weight: bold;
+
+  //         li {
+  //           font-size: 1.1em;
+  //           list-style-type: none;
+  //           padding: 0;
+  //           width: 100%;
+  //           border-bottom: 1px dotted #333;
+
+  //           &:last-child {
+  //             padding-bottom: 0;
+  //             border-bottom: none;
+  //           }
+
+  //           a {
+  //             display: block;
+  //             color: #333;
+  //             padding: 1em 0;
+  //           }
+  //         }
+  //       }
+      
+  //       &.active {
+  //         transform: translateY(0%);
+  //       }
+  //     }
+  //     .navToggle {
+  //       display: block;
+  //       // position: fixed;
+  //       position: absolute;
+    
+  //       /* bodyに対しての絶対位置指定 */
+  //       right: 20px;
+  //       top: 18px;
+  //       width: 42px;
+  //       height: 51px;
+  //       cursor: pointer;
+  //       z-index: 6;
+  //       background: #333;
+  //       text-align: center;
+    
+  //       span {
+  //         display: block;
+  //         position: absolute;
+    
+  //         /* .navToggleに対して */
+  //         width: 30px;
+  //         border-bottom: solid 3px #eee;
+  //         -webkit-transition: .35s ease-in-out;
+  //         -moz-transition: .35s ease-in-out;
+  //         transition: .35s ease-in-out;
+  //         left: 6px;
+    
+  //         &:nth-child(1) {
+  //           top: 9px;
+  //         }
+    
+  //         &:nth-child(2) {
+  //           top: 18px;
+  //         }
+    
+  //         &:nth-child(3) {
+  //           top: 27px;
+  //         }
+    
+  //         &:nth-child(4) {
+  //           border: none;
+  //           color: #eee;
+  //           font-size: 9px;
+  //           font-weight: bold;
+  //           top: 34px;
+  //         }
+  //       }
+    
+  //       &.active span {
+  //         &:nth-child(1) {
+  //           top: 18px;
+  //           left: 6px;
+  //           -webkit-transform: rotate(-45deg);
+  //           -moz-transform: rotate(-45deg);
+  //           transform: rotate(-45deg);
+  //         }
+    
+  //         &:nth-child(2), &:nth-child(3) {
+  //           top: 18px;
+  //           -webkit-transform: rotate(45deg);
+  //           -moz-transform: rotate(45deg);
+  //           transform: rotate(45deg);
+  //         }
+  //       }
+  //     }
+    
+  //     /* 最初のspanをマイナス45度に */
+    
+  //     /* 2番目と3番目のspanを45度に */
+  //     // .contents {
+  //     // background-image: url("gym1.png");
+  //     // height: 700px;
+  //     // width: 700px;
+  //     // margin: 0 auto;
+  //     // margin: 200px,;
+  //     // background-size: cover;
+  //     // }
+  //   }
+  //   /* 最後はラインを描かない */
+
+  //   /* このクラスを、jQueryで付与・削除する */
+
+    
+    
+
+  //   .contents__box__top {
+  //     // width: 1000px;
+  //     // height: 610px;
+  //     margin: 0 auto;
+  //     padding: 100px;
+  //     background-color: #f0f0f0;
+  //     .slider{
+  //       width: 60vw;
+  //       height: calc(60vw * 0.7);
+  //       margin: 0 auto;
+  //       overflow: hidden;
+  //       position: relative;
         
+  //   }
+  //       .h1 {
+  //         z-index: 6;
+  //       } 
+  //       .slider__content{
+  //           min-width: 100%;
+  //           position: absolute;
+  //           top: 0;
+  //           left: 0;
+  //           transform: translateX(100%);
+            
+  //       }
+      
+  //       .slider__content:nth-child(1){
+  //           animation: sliderAnime 18s ease-in-out infinite;
+  //           z-index: 6;
+  //       }
+          
+  //       .slider__content:nth-child(2){
+  //           animation: sliderAnime2 18s ease-in-out 3s infinite;
+  //           z-index: -1;
+  //       }
+          
+  //       .slider__content:nth-child(3){
+  //           animation: sliderAnime2 18s ease-in-out 9s infinite;
+  //           z-index: -1;
+  //       }
+          
+  //       @keyframes sliderAnime{
+  //           0%{
+  //               z-index: 5;
+  //               transform: translateX(0);
+  //           }
+  //           16.6%{
+  //               transform: translateX(0);
+  //           }
+  //           33.3%{
+  //               transform: translateX(-100%);
+  //           }
+  //           50%{
+  //               z-index: -1;
+  //               transform: translateX(-100%);
+  //           }
+  //           66.6%{
+  //               transform: translateX(100%);
+  //           }
+  //           83.2%{
+  //               z-index: 5;
+  //               transform: translateX(100%);
+  //           }
+  //           100%{
+  //               z-index: 5;
+  //               transform: translateX(0);
+  //           }
+  //       }
         
-    } 
-        }
-  
-    nav.globalMenuSp {
-      position: fixed;
-      z-index: 6;
+  //     @keyframes sliderAnime2{
+  //         0%{
+  //             z-index: 5;
+  //             transform: translateX(100%);
+  //         }
+  //         16.6%{
+  //             transform: translateX(0);
+  //         }
+  //         33.3%{
+  //             transform: translateX(0);
+  //         }
+  //         50%{
+  //             transform: translateX(-100%);
+  //         }
+  //         66.6%{
+  //             z-index: -1;
+  //             transform: translateX(-100%);
+  //         }
+  //         83.2%{
+  //             transform: translateX(100%);
+  //         }
+  //         100%{
+  //             z-index: 5;
+  //             transform: translateX(100%);
+  //         }
+  //     }
+        
+  //     .slider__img{
+  //         max-width: 100%;
+  //         min-width: 100%;
+  //     }
+  //     }
+  //   .footer {
+  //     background: #ffffff;
+  //     color: #333;
+  //     height: 160px;
+      
+  //     // flex-flow: column;
+  //     // min-height: 35vh;
+  //     .contents__box {
+  //       // width:900px;
+  //       height: 100px;
+  //       // margin: 0 auto;
+  //       text-align: center;
+  //       padding: 30px;
+  //       &__message{
+  //         padding: 30px;
+  //         font-size:15px;
+  //         display: flex;  
+  //         margin: auto;
+  //       }
+      
+      
+  //     }
+  //     h6 {
+  //       display: block;
+  //       color:#575652 ;
+  //       text-align: center;
+  //     }
+  //     a {
+  //       text-decoration: none;
+  //       font-size: 13px;
+  //     }
+      
+
+  //     .icon {
+  //     font-size: 30px;
+  //     text-decoration: none;
+  //     margin: 45px;
+  //     }
+  //   }
+  // }
+
+
+
+
+  @import url('https://fonts.googleapis.com/css?family=Lato');
+
+body {
+  margin: 0;
+}
+h1 {
+  margin: 0 0 20px;
+  line-height: 1.3;
+  color: #fff;
+}
+p {
+  margin: 0;
+  line-height: 1.6;
+  color: #fff;
+}
+
+
+
+.hero {
+  padding: 150px 0;
+  background: linear-gradient(45deg, #ae1a31 0%,#db6b2a 99%); 
+  &__text {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+}
+
+
+
+.text-reveal {
+  font-family: 'Lato', sans-serif;
+  span {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
       top: 0;
       left: 0;
-      background: #fff;
-      color: #000;
-      text-align: center;
-      transform: translateY(-100%);
-      transition: all 0.3s;
       width: 100%;
-      opacity: 0.8;
-
-      ul {
-        background-color: transparent;
-        margin: 0 auto;
-        padding: 0;
-        width: 100%;
-        padding: 100px 0 0 !important;
-        font-weight: bold;
-
-        li {
-          font-size: 1.1em;
-          list-style-type: none;
-          padding: 0;
-          width: 100%;
-          border-bottom: 1px dotted #333;
-
-          &:last-child {
-            padding-bottom: 0;
-            border-bottom: none;
-          }
-
-          a {
-            display: block;
-            color: #333;
-            padding: 1em 0;
-          }
-        }
-      }
-    
-      &.active {
-        transform: translateY(0%);
-      }
+      height: 100%;
+      background: #9c172c;
+      transform-origin: left;
+      transform: scale(1, 1);
     }
-    .navToggle {
-      display: block;
-      // position: fixed;
-      position: absolute;
-  
-      /* bodyに対しての絶対位置指定 */
-      right: 20px;
-      top: 18px;
-      width: 42px;
-      height: 51px;
-      cursor: pointer;
-      z-index: 6;
-      background: #333;
-      text-align: center;
-  
-      span {
-        display: block;
-        position: absolute;
-  
-        /* .navToggleに対して */
-        width: 30px;
-        border-bottom: solid 3px #eee;
-        -webkit-transition: .35s ease-in-out;
-        -moz-transition: .35s ease-in-out;
-        transition: .35s ease-in-out;
-        left: 6px;
-  
-        &:nth-child(1) {
-          top: 9px;
-        }
-  
-        &:nth-child(2) {
-          top: 18px;
-        }
-  
-        &:nth-child(3) {
-          top: 27px;
-        }
-  
-        &:nth-child(4) {
-          border: none;
-          color: #eee;
-          font-size: 9px;
-          font-weight: bold;
-          top: 34px;
-        }
-      }
-  
-      &.active span {
-        &:nth-child(1) {
-          top: 18px;
-          left: 6px;
-          -webkit-transform: rotate(-45deg);
-          -moz-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-        }
-  
-        &:nth-child(2), &:nth-child(3) {
-          top: 18px;
-          -webkit-transform: rotate(45deg);
-          -moz-transform: rotate(45deg);
-          transform: rotate(45deg);
+    &:after { 
+     content: "\A";
+     white-space: pre; 
+    }
+    @for $i from 1 through 5 {
+      &:nth-of-type(#{$i}) {
+        &:before {
+          $delay: $i * 2;
+          animation: reveal-text 600ms cubic-bezier(0.645, 0.045, 0.355, 1) unquote("0.#{$delay}s") forwards;
         }
       }
     }
-  
-    /* 最初のspanをマイナス45度に */
-  
-    /* 2番目と3番目のspanを45度に */
-    // .contents {
-    // background-image: url("gym1.png");
-    // height: 700px;
-    // width: 700px;
-    // margin: 0 auto;
-    // margin: 200px,;
-    // background-size: cover;
-    // }
   }
-  /* 最後はラインを描かない */
+}
 
-  /* このクラスを、jQueryで付与・削除する */
-
-  
-  
-
-  .contents__box__top {
-    // width: 1000px;
-    // height: 610px;
-    margin: 0 auto;
-    padding: 100px;
-    background-color: #f0f0f0;
-    .slider{
-      width: 60vw;
-      height: calc(60vw * 0.7);
-      margin: 0 auto;
-      overflow: hidden;
-      position: relative;
-      
-  }
-      .h1 {
-        z-index: 6;
-      } 
-      .slider__content{
-          min-width: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          transform: translateX(100%);
-      }
-        
-      .slider__content:nth-child(1){
-          animation: sliderAnime 18s ease-in-out infinite;
-          z-index: 6;
-      }
-        
-      .slider__content:nth-child(2){
-          animation: sliderAnime2 18s ease-in-out 3s infinite;
-          z-index: -1;
-      }
-        
-      .slider__content:nth-child(3){
-          animation: sliderAnime2 18s ease-in-out 9s infinite;
-          z-index: -1;
-      }
-        
-      @keyframes sliderAnime{
-          0%{
-              z-index: 5;
-              transform: translateX(0);
-          }
-          16.6%{
-              transform: translateX(0);
-          }
-          33.3%{
-              transform: translateX(-100%);
-          }
-          50%{
-              z-index: -1;
-              transform: translateX(-100%);
-          }
-          66.6%{
-              transform: translateX(100%);
-          }
-          83.2%{
-              z-index: 5;
-              transform: translateX(100%);
-          }
-          100%{
-              z-index: 5;
-              transform: translateX(0);
-          }
-      }
-      
-    @keyframes sliderAnime2{
-        0%{
-            z-index: 5;
-            transform: translateX(100%);
-        }
-        16.6%{
-            transform: translateX(0);
-        }
-        33.3%{
-            transform: translateX(0);
-        }
-        50%{
-            transform: translateX(-100%);
-        }
-        66.6%{
-            z-index: -1;
-            transform: translateX(-100%);
-        }
-        83.2%{
-            transform: translateX(100%);
-        }
-        100%{
-            z-index: 5;
-            transform: translateX(100%);
-        }
-    }
-      
-    .slider__img{
-        max-width: 100%;
-        min-width: 100%;
-    }
-    }
-  .footer {
-    background: #ffffff;
-    color: #333;
-    height: 160px;
-    
-    // flex-flow: column;
-    // min-height: 35vh;
-    .contents__box {
-      // width:900px;
-      height: 100px;
-      // margin: 0 auto;
-      text-align: center;
-      padding: 30px;
-      &__message{
-        padding: 30px;
-        font-size:15px;
-        display: flex;  
-        margin: auto;
-      }
-    
-    
-    }
-    h6 {
-      display: block;
-      color:#575652 ;
-      text-align: center;
-    }
-    a {
-      text-decoration: none;
-      font-size: 13px;
-    }
-    
-
-    .icon {
-    font-size: 30px;
-    text-decoration: none;
-    margin: 45px;
-    }
+@keyframes reveal-text {
+  100% {
+    transform: scale(0, 1)
   }
 }

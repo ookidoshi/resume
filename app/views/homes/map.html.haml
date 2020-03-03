@@ -1,74 +1,96 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-    :css
-      html { height: 90% }
-      body { height: 95%; margin: 0; padding: 0 }
-      #map_canvas { height: 90% }
-    %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyCzvzjkUZSOCoqnopSfu6DXh6VrAPg8q5w"}
-      :cdata
-  / ページが読み込まれたらinitialize()関数を実行
-  %h3アクセスマップ
-  %h4池田市ダイハツ町の近くにスコーピオンジムはあります
-  %h4新開橋北 交差点・西へ入る
-  %h5 R171号・ファミリーマート池田豊島南店の駐車場横の細道を入った所です。
-  %h5近隣は住宅街にて、騒音等ご配慮お願いいたします。
-  %h5わからない場合はコンビニからTELください。
+-# !!!
+-# %html
+-#   %head
+-#     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+-#     :css
+-#       html { height: 90% }
+-#       body { height: 95%; margin: 0; padding: 0 }
+-#       #map_canvas { height: 90% }
+-#     %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyCzvzjkUZSOCoqnopSfu6DXh6VrAPg8q5w"}
+-#       :cdata
+-#   / ページが読み込まれたらinitialize()関数を実行
+-#   %h3アクセスマップ
+-#   %h4池田市ダイハツ町の近くにスコーピオンジムはあります
+-#   %h4新開橋北 交差点・西へ入る
+-#   %h5 R171号・ファミリーマート池田豊島南店の駐車場横の細道を入った所です。
+-#   %h5近隣は住宅街にて、騒音等ご配慮お願いいたします。
+-#   %h5わからない場合はコンビニからTELください。
 
 
 
 
-  %body{:onload => "initialize()"}
-    / 地図を表示させる要素。widthとheightを必ず指定する。
-    #map_canvas{:style => "width:100%; height:100%"}
+-#   %body{:onload => "initialize()"}
+-#     / 地図を表示させる要素。widthとheightを必ず指定する。
+-#     #map_canvas{:style => "width:100%; height:100%"}
     
-    緯度：
-    %span#ido 34.802974
-    %br/
-    経度：
-    %span#keido 135.429446
-    / initialize()関数を定義
-    :javascript
-      var map;
-      function initialize() {
-        // 地図を表示する際のオプションを設定
-        var mapOptions = {
-          center: new google.maps.LatLng(34.802974, 135.429446),
-          zoom: 16,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
+-#     緯度：
+-#     %span#ido 34.802974
+-#     %br/
+-#     経度：
+-#     %span#keido 135.429446
+-#     / initialize()関数を定義
+-#     :javascript
+-#       var map;
+-#       function initialize() {
+-#         // 地図を表示する際のオプションを設定
+-#         var mapOptions = {
+-#           center: new google.maps.LatLng(34.802974, 135.429446),
+-#           zoom: 16,
+-#           mapTypeId: google.maps.MapTypeId.ROADMAP
+-#         };
  
-        // Mapオブジェクトに地図表示要素情報とオプション情報を渡し、インスタンス生成
-        map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
-      }
+-#         // Mapオブジェクトに地図表示要素情報とオプション情報を渡し、インスタンス生成
+-#         map = new google.maps.Map(document.getElementById("map_canvas"),
+-#             mapOptions);
+-#       }
        
-      function search(){
-         var place = document.getElementById('place').value;
-         var geocoder = new google.maps.Geocoder();
-         // ジオコーディング　検索実行
-         geocoder.geocode({"address" : place}, function(results, status) {
-         if (status == google.maps.GeocoderStatus.OK) {
+-#       function search(){
+-#          var place = document.getElementById('place').value;
+-#          var geocoder = new google.maps.Geocoder();
+-#          // ジオコーディング　検索実行
+-#          geocoder.geocode({"address" : place}, function(results, status) {
+-#          if (status == google.maps.GeocoderStatus.OK) {
                
-              var lat = results[0].geometry.location.lat();//緯度を取得
-              var lng = results[0].geometry.location.lng();//経度を取得
-              var ido = document.getElementById('ido')
-              ido.innerHTML = lat;
-              var keido = document.getElementById('keido')
-              keido.innerHTML = lng;
-              var mark = {
-                  lat: lat, // 緯度
-                  lng: lng // 経度
-              };
-              marker = new google.maps.Marker({ // マーカーの追加
-              position: mark, // マーカーを立てる位置を指定
-              map: map // マーカーを立てる地図を指定
-              });
+-#               var lat = results[0].geometry.location.lat();//緯度を取得
+-#               var lng = results[0].geometry.location.lng();//経度を取得
+-#               var ido = document.getElementById('ido')
+-#               ido.innerHTML = lat;
+-#               var keido = document.getElementById('keido')
+-#               keido.innerHTML = lng;
+-#               var mark = {
+-#                   lat: lat, // 緯度
+-#                   lng: lng // 経度
+-#               };
+-#               marker = new google.maps.Marker({ // マーカーの追加
+-#               position: mark, // マーカーを立てる位置を指定
+-#               map: map // マーカーを立てる地図を指定
+-#               });
                
-              map.setCenter(results[0].geometry.location); // 地図の中心を移動
-              cnt =0;
-         }
-         });
-         //}
-      }
+-#               map.setCenter(results[0].geometry.location); // 地図の中心を移動
+-#               cnt =0;
+-#          }
+-#          });
+-#          //}
+-#       }
+.hero
+  .hero__text
+    %h1.text-reveal
+      %span ブラジリアン柔術を
+      %span スコーピオンジムで学ぶ
+    %p.text-reveal
+      %span  あなたのライフスタイルに合わせて
+      %span 欧米をはじめアジアで人気沸騰の競技
+      %span 「ブラジリアン柔術をやってみませんか？？」
+＜仕事のできる男達は、仕事前に「柔術」をして汗を流す＞
+
+ 
+
+＜寝技主体の体と頭を使うチェスのような格闘技＞
+一体どんなスポーツかとひと言で言うと、寝技主体の格闘技です。絞め技や関節技を主に攻撃手段として要いる格闘技であり、打撃技は一切ありません。柔道やレスリングに似てはいますが、頭脳戦を重要とする格闘技なので、考えながら動く力を必要とし、体を使ったチェスと言う表現されることが多いです。
+
+ 
+
+＜人の数だけ、技がある。柔術の楽しみは「技を選ぶこと」＞
+競技を行う年齢層は様々で、5歳から50代の大人が集まり、マットの上で自由に発想し楽しんでいます。また、柔術にはたくさんの技が存在し一流選手でも全てを使いこなすことはできません。個人は皆違った生き物なので、技は人の数だけ存在していると言えます。そして、自分に合った技を探す楽しみが強くなると言うことに繋がり自分だけの柔術を作っていくことが柔術の一番の醍醐味です。
+
+ 
