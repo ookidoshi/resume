@@ -1,0 +1,39 @@
+.footer {
+  background: #ffffff;
+  color: #333;
+  height: 160px;
+  
+  // flex-flow: column;
+  // min-height: 35vh;
+  .contents__box {
+    // width:900px;
+    height: 100px;
+    // margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    &__message{
+      padding: 30px;
+      font-size:15px;
+      display: flex;  
+      margin: auto;
+    }
+  
+  
+  }
+  h6 {
+    display: block;
+    color:#575652 ;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    font-size: 13px;
+  }
+  
+
+  .icon {
+  font-size: 30px;
+  text-decoration: none;
+  margin: 45px;
+  }
+}
